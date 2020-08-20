@@ -17,7 +17,8 @@ collections:
         name: tracks
         label: Tracks
         fields: # The fields for each track
-            - widget: list
+            - name: tracks
+              widget: list
               fields:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Sound File", name: "file", widget: "file" }
