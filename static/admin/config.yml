@@ -1,0 +1,24 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+
+publish_mode: editorial_workflow # Allows you to save drafts before publishing them
+media_folder: static/uploads # Media files will be stored in the repo under static/images/uploads
+public_folder: /uploads # The src attribute for uploaded media will begin with /images/uploads
+
+collections:
+  - name: "tracks" # Used in routes, e.g., /admin/collections/tracks
+    label: "Tracks" # Used in the UI
+    files: "src/data/tracks.json" # The path to the file where our track data is stored
+    extension: "json"
+    format: "json"
+    create: true # Allow users to create new documents in this collection
+
+    fields: # The fields for each document
+      - name: files
+        label: Files
+        widget: list
+        fields:
+        - { label: "Title", name: "tracks", widget: "file" }
+        - { label: "Sound File", name: "title", widget: "image" }
+        - { label: "Cover Image", name: "body", widget: "markdown" }
