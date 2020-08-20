@@ -17,11 +17,11 @@ collections:
         name: tracks
         label: Tracks
         fields: # The fields for each track
-            widget: list
-            fields:
-            - { label: "Title", name: "title", widget: "string" }
-            - { label: "Sound File", name: "file", widget: "file" }
-            - { label: "Cover Image", name: "image", widget: "image" }
+            - widget: list
+              fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Sound File", name: "file", widget: "file" }
+              - { label: "Cover Image", name: "image", widget: "image" }
 
   - name: "info"
     label: "Info"
@@ -38,5 +38,5 @@ collections:
             label: Links
             widget: list
             fields: 
-              - {text: string}
-              - {url: url}
+              - { label: "Text", name: "text", widget: string }
+              - { label: "url", name: "url", widget: url }
