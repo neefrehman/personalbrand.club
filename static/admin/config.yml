@@ -28,10 +28,10 @@ collections:
         name: info
         label: Info
         fields:
-          - { label: "Bio", name: "bio", widget: "image" }
+          - { label: "Bio", name: "bio", widget: "text" }
           - name: links
             label: Links
             widget: list
             fields: 
               - { label: "Text", name: "text", widget: string }
-              - { label: "url", name: "url", widget: url }
+              - { label: "url", name: "url", widget: string }
