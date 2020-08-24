@@ -26,7 +26,7 @@
         );
     });
     $: moveableCorners?.forEach(corner => {
-        corner.style.opacity = isHovered ? 0.5 : 0;
+        corner.style.opacity = isHovered ? 0.4 : 0;
     });
 
     const handleMouseEnter = () => {
@@ -57,7 +57,7 @@
     }
 
     :global(.moveable-control-box .moveable-control:hover) {
-        opacity: 0.5 !important;
+        opacity: 0.4 !important;
     }
 
     img {
