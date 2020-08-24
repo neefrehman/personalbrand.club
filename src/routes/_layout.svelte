@@ -1,5 +1,6 @@
 <script>
     import { onMount } from "svelte";
+    import Gradient from "../components/Gradient.svelte";
 
     const globeEmojis = ["🌍", "🌎", "🌏"];
     let globeEmojiIndex = 0;
@@ -20,10 +21,14 @@
 
 <style>
     :global(body) {
-        background-color: #f1f1f1;
-        color: #101010;
-        max-width: 1180px;
-        padding: 2em;
+        margin: 0;
+        position: relative;
+        background-color: #eaeaea;
+        color: #1f1f1f;
+        font-size: 20px;
+    }
+    div {
+        max-width: 1440px;
         margin: 0 auto;
     }
 </style>
@@ -36,4 +41,8 @@
     <title>personalbrand.club</title>
 </svelte:head>
 
-<slot />
+<Gradient />
+
+<div>
+    <slot />
+</div>

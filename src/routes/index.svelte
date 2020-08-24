@@ -1,29 +1,31 @@
+<script>
+    import Header from "../components/Header.svelte";
+</script>
+
 <style>
-    h1,
     p {
         text-align: center;
         margin: 0 auto;
     }
 
-    h1 {
-        font-size: 4em;
-        font-weight: 400;
-        margin: 0 0 0.5em 0;
-    }
-
     p {
         margin: 1em auto;
     }
+
+    img {
+        width: 100%;
+    }
 </style>
 
-<header>
-    <h1>personalbrand</h1>
-</header>
+<Header />
 
-<p>info</p>
-
-<p>tracks</p>
+<main>
+    <p>info</p>
+    <p>tracks</p>
+</main>
 
 <footer>
     <p>footer</p>
+
+    <!-- <img src="/assets/club.jpeg" alt="personalbrad DJing at Final Taipei" /> -->
 </footer>
