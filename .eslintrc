@@ -14,7 +14,7 @@
         "eslint:recommended",
         "plugin:import/errors",
         "plugin:import/warnings",
-        // "prettier"
+        // "prettier" // https://github.com/sveltejs/prettier-plugin-svelte/issues/57
     ],
     "overrides": [
     {
