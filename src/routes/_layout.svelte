@@ -4,12 +4,11 @@
 
     const globeEmojis = ["🌍", "🌎", "🌏"];
     let globeEmojiIndex = 0;
-    let currentGlobeEmoji = globeEmojis[globeEmojiIndex];
+    $: currentGlobeEmoji = globeEmojis[globeEmojiIndex];
 
     const rotateGlobeEmoji = () => {
         if (document.hasFocus()) {
             globeEmojiIndex = globeEmojiIndex < 2 ? globeEmojiIndex + 1 : 0;
-            currentGlobeEmoji = globeEmojis[globeEmojiIndex];
         }
     };
 
@@ -27,9 +26,16 @@
         color: #1f1f1f;
         font-size: 20px;
     }
+
     div {
         max-width: 1440px;
         margin: 0 auto;
+    }
+
+    @media (max-width: 1480px) {
+        div {
+            margin: 0 20px;
+        }
     }
 </style>
 

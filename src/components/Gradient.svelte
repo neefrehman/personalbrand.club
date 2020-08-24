@@ -45,7 +45,7 @@
                 stitchTiles="stitch">
                 <animate
                     attributeName="seed"
-                    dur="1s"
+                    dur="3s"
                     values="10;0;10"
                     repeatCount="indefinite" />
             </feTurbulence>
