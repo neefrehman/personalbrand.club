@@ -25,9 +25,10 @@
             ".moveable-control-box .moveable-control"
         );
     });
-    $: moveableCorners?.forEach(corner => {
-        corner.style.opacity = isHovered ? 0.4 : 0;
-    });
+    $: moveableCorners &&
+        moveableCorners.forEach(corner => {
+            corner.style.opacity = isHovered ? 0.4 : 0;
+        });
 
     const handleMouseEnter = () => {
         clearTimeout(hoverTimeout);
