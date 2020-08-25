@@ -25,6 +25,7 @@
             ".moveable-control-box .moveable-control"
         );
     });
+
     $: moveableCorners &&
         moveableCorners.forEach(corner => {
             corner.style.opacity = isHovered ? 0.4 : 0;
@@ -61,6 +62,10 @@
         opacity: 0.4 !important;
     }
 
+    div {
+        grid-column: span 4;
+    }
+
     img {
         width: 100%;
     }
@@ -73,6 +78,7 @@
     on:mouseleave={handleMouseLeave}>
     <p>{title}</p>
     <img src={coverImage} alt={title + 'cover image'} />
+    <!-- TODO: have one global <audio> and update its src via a store subscription -->
     <audio bind:paused {title}>
         <source src={audioFile} />
         <track kind="captions" />

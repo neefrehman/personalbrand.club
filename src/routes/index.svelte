@@ -5,11 +5,6 @@
 </script>
 
 <style>
-    p {
-        text-align: center;
-        margin: 1em auto;
-    }
-
     img {
         width: 100%;
     }
@@ -18,9 +13,14 @@
 <Header />
 
 <main>
-    <p>dj+producer</p>
+    <GridWrapper>
+        <p>dj</p>
+        <p>+</p>
+        <p>producer</p>
+    </GridWrapper>
 
     <p>tracks</p>
+
     <GridWrapper>
         <Track
             title="track 1 (click me)"
@@ -30,9 +30,11 @@
 </main>
 
 <footer>
-    <p>footer</p>
-    <p>a short bio?</p>
-    <p>link to souncloud.socials etc?</p>
+    <GridWrapper>
+        <p>footer</p>
+        <p>a short bio?</p>
+        <p>link to souncloud socials etc?</p>
+    </GridWrapper>
 
     <img src="/assets/club.jpeg" alt="personalbrad DJing at Final Taipei" />
 </footer>
