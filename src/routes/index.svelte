@@ -24,10 +24,7 @@
     <p>tracks</p>
 
     <GridWrapper>
-        <Track
-            title="track 1 (click me)"
-            audioFile="uploads/PinkPanther60.wav"
-            coverImage="uploads/Digifritids_Illustrations.png" />
+        <!-- {each } -->
     </GridWrapper>
 </main>
 
@@ -37,8 +34,6 @@
         <p>a short bio?</p>
         <p>link to souncloud socials etc?</p>
     </GridWrapper>
-
-    <!-- {each } -->
 
     <img src="/assets/club.jpeg" alt="personalbrad DJing at Final Taipei" />
 </footer>
