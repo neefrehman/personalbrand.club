@@ -64,6 +64,7 @@
 
     div {
         grid-column: span 3;
+        cursor: pointer;
     }
 
     img {

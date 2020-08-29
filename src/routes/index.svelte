@@ -23,7 +23,7 @@
         <p>producer</p>
     </GridWrapper>
 
-    <p>tracks</p>
+    <p>tracks (click them)</p>
 
     <GridWrapper>
         {#each tracks as { title, file, image }}
