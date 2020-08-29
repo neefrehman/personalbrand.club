@@ -1,16 +1,35 @@
+<script context="module">
+    const audioElements = [new Set()];
+</script>
+
 <script>
     import { onMount } from "svelte";
 
     import Moveable from "svelte-moveable";
 
+    // props
     export let title;
     export let audioFile;
     export let coverImage;
-    export let paused = true;
-    $: playing = !paused;
+
+    // audio controls
+    let audio;
+    let paused = true;
+
+    // Add track to module context list
+    onMount(() => {
+        audioElements.add(audio);
+        return () => elements.delete(audio);
+    });
 
     const togglePlaying = () => (paused = !paused);
+    const pauseOthers = () => {
+        audioElements.forEach(element => {
+            if (element !== audio) element.pause();
+        });
+    };
 
+    // Moveable
     let target;
     let frame = {
         matrix: [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1],
@@ -65,6 +84,11 @@
     div {
         grid-column: span 3;
         cursor: pointer;
+        transition: filter 300ms ease;
+    }
+
+    div.playing {
+        filter: brightness(0.8);
     }
 
     img {
@@ -76,14 +100,15 @@
     bind:this={target}
     on:click={togglePlaying}
     on:mouseenter={handleMouseEnter}
-    on:mouseleave={handleMouseLeave}>
+    on:mouseleave={handleMouseLeave}
+    class:playing={!paused}>
     <p>{title}</p>
-    <img src={coverImage} alt={title + 'cover image'} />
-    <!-- TODO: have one global <audio> and update its src via a store subscription -->
-    <audio bind:paused {title}>
+    <img src={coverImage} alt={title + ' cover image'} />
+    <audio bind:this={audio} bind:paused on:play={pauseOthers} {title}>
         <source src={audioFile} />
         <track kind="captions" />
     </audio>
+    <!-- TODO: progress -->
 </div>
 
 {#if process.browser}
