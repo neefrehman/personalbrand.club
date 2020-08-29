@@ -22,8 +22,8 @@ collections:
               widget: list
               fields:
               - { label: "Title", name: "title", widget: "string" }
-              - { label: "Sound File", name: "file", widget: "file" }
-              - { label: "Cover Image", name: "image", widget: "image" }
+              - { label: "Sound File", name: "file", widget: "file", hint: "The filename can't contain any spaces, please_use_underscores :-)" }
+              - { label: "Cover Image", name: "image", widget: "image", hint: "The filename can't contain any spaces, please_use_underscores :-)" }
 
       - file: "src/data/info.json"
         name: info

@@ -63,7 +63,7 @@
     }
 
     div {
-        grid-column: span 4;
+        grid-column: span 3;
     }
 
     img {
