@@ -15,6 +15,11 @@
     // audio controls
     let audio;
     let paused = true;
+    $: rawDuration = (audio && audio.duration) || 0;
+    $: minutes = Math.floor(rawDuration / 60);
+    $: seconds = Math.floor(rawDuration % 60);
+    $: secondsTwoDigits = ("0" + seconds).slice(-2);
+    $: duration = `${minutes}:${secondsTwoDigits}`;
 
     // Add track to module context list
     onMount(() => {
@@ -109,6 +114,7 @@
         <track kind="captions" />
     </audio>
     <!-- TODO: progress -->
+    <p>{duration}</p>
 </div>
 
 {#if process.browser}
