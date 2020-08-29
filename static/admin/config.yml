@@ -10,6 +10,8 @@ collections:
     label: "Content" # Used in the UI
     extension: "json"
     format: "json"
+    editor:
+      preview: false
 
     files:
       - file: "src/data/tracks.json" # The path to the file where our data is stored
