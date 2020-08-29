@@ -1,0 +1,19 @@
+{
+  "tracks": [
+    {
+      "file": "/uploads/personalbrand - Free To Do Nothing But Work.mp3",
+      "image": "/uploads/ftdnbw cover.jpg",
+      "title": "Free To Do Nothing But Work"
+    },
+    {
+      "file": "/uploads/personalbrand - FULLY AUTOMATED LUXURY SORTING CENTRE.mp3",
+      "title": "FULLY AUTOMATED LUXURY SORTING CENTRE",
+      "image": "/uploads/FALSC cover.jpg"
+    },
+    {
+      "title": "Memory Palaces (or the un-necessity of recollection for digital ageing)",
+      "file": "/uploads/personalbrand - Memory Palaces (or the un-necessity of recollection for digital ageing).mp3",
+      "image": "/uploads/memorypalaces1400.jpg"
+    }
+  ]
+}
