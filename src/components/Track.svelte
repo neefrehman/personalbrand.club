@@ -1,5 +1,5 @@
 <script context="module">
-    const audioElements = [new Set()];
+    const audioElements = new Set();
 </script>
 
 <script>
