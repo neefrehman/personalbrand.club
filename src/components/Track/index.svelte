@@ -52,35 +52,43 @@
     let target;
 </script>
 
-<style>
+<style lang="scss">
     div.container {
         grid-column: span 3;
         transition: filter 300ms ease;
+
+        &.playing {
+            filter: brightness(0.8);
+
+            progress {
+                opacity: 1;
+            }
+        }
     }
 
     div.main {
         cursor: pointer;
-    }
 
-    picture {
-        position: relative;
-        overflow: hidden;
-    }
+        picture {
+            position: relative;
+            overflow: hidden;
 
-    img {
-        width: 100%;
-    }
+            img {
+                width: 100%;
+            }
 
-    progress {
-        width: 100%;
-        position: absolute;
-        bottom: 0;
-        left: 0;
+            progress {
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+                left: 0;
 
-        -webkit-appearance: none;
-        appearance: none;
-        opacity: 0;
-        transition: opacity 200ms ease;
+                -webkit-appearance: none;
+                appearance: none;
+                opacity: 0;
+                transition: opacity 200ms ease;
+            }
+        }
     }
 
     div.info {
@@ -88,18 +96,29 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+
+        p {
+            margin: 0;
+        }
     }
 
-    div.info p {
-        margin: 0;
-    }
+    div.main,
+    a {
+        transition: box-shadow 120ms ease;
 
-    div.container.playing {
-        filter: brightness(0.8);
-    }
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(21, 156, 228, 0.4);
 
-    div.container.playing progress {
-        opacity: 1;
+            &:not(.focus-visible) {
+                outline: none; // Polyfilled
+                box-shadow: none;
+            }
+            &:not(:focus-visible) {
+                outline: none; // Broken when used with the above selector
+                box-shadow: none;
+            }
+        }
     }
 </style>
 
