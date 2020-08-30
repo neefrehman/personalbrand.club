@@ -1,7 +1,7 @@
 <script>
     import GridWrapper from "../components/GridWrapper.svelte";
     import Header from "../components/Header.svelte";
-    import Track from "../components/Track.svelte";
+    import Track from "../components/Track/index.svelte";
 
     import trackData from "../data/tracks.json";
 

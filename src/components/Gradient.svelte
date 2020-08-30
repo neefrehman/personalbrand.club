@@ -24,13 +24,13 @@
 
     @keyframes GrowNShrink {
         0% {
-            height: 100vh;
+            height: 80vh;
         }
         50% {
-            height: 130vh;
+            height: 110vh;
         }
         100% {
-            height: 100vh;
+            height: 80vh;
         }
     }
 </style>

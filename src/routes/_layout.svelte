@@ -52,3 +52,5 @@
 <div>
     <slot />
 </div>
+
+<div class="moveable-container" />
