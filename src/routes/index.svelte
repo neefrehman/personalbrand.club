@@ -3,9 +3,9 @@
     import Header from "../components/Header.svelte";
     import Track from "../components/Track/index.svelte";
 
-    import trackData from "../data/tracks.json";
+    import trackJason from "../data/tracks.json";
 
-    const tracks = trackData.tracks;
+    const tracks = trackJason.tracks;
 </script>
 
 <style>
@@ -26,7 +26,7 @@
     <p>tracks (click them)</p>
 
     <GridWrapper>
-        {#each tracks as { title, file, image }}
+        {#each tracks as { title, file, image }, index}
             <Track {title} audioFile={file} coverImage={image} />
         {/each}
     </GridWrapper>

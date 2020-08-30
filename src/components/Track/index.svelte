@@ -41,6 +41,13 @@
         });
     };
 
+    const handleKeyDown = e => {
+        if (e.key === " " || e.key === "Enter") {
+            e.preventDefault();
+            togglePlaying();
+        }
+    };
+
     // Moveable interfacing logic
     let target;
 </script>
@@ -97,7 +104,13 @@
 </style>
 
 <div class="container" bind:this={target} class:playing={!paused}>
-    <div class="main" on:click={togglePlaying}>
+    <div
+        class="main"
+        on:click={togglePlaying}
+        tabindex="0"
+        role="button"
+        aria-pressed={!paused}
+        on:keydown={handleKeyDown}>
         <p>{title}</p>
         <picture>
             <img src={coverImage} alt={title + ' cover image'} />
@@ -116,7 +129,7 @@
     </div>
     <div class="info">
         <p>{formatTime(currentTime)} / {formatTime(duration)}</p>
-        <a href={audioFile} download>download</a>
+        <a href={audioFile} download role="button">download</a>
     </div>
 </div>
 

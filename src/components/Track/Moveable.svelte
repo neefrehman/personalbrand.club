@@ -22,6 +22,7 @@
         height: var(--dot-size) !important;
     }
 
+    /* pseudoelement used to ensure larger hitbox than visible element */
     :global(.moveable-control-box .moveable-control::after) {
         content: "";
         position: absolute;
@@ -34,7 +35,7 @@
         width: 15px;
         height: 15px;
         transform: scale(0);
-        transition: transform 380ms cubic-bezier(1, 0.1, 0.1, 1);
+        transition: transform 360ms cubic-bezier(1, 0.1, 0.1, 1);
     }
 
     :global(.moveable-control-box:hover .moveable-control::after) {
