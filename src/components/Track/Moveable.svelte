@@ -43,8 +43,8 @@
 </style>
 
 <Moveable
-    container={document.querySelector('.moveable-container')}
     {target}
+    container={document.querySelector('.moveable-container')}
     origin={false}
     warpable={true}
     renderDirections={['nw', 'ne', 'sw', 'se']}

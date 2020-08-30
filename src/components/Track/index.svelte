@@ -19,7 +19,7 @@
     let duration;
 
     const formatTime = seconds => {
-        if (isNaN(seconds)) return "...";
+        if (isNaN(seconds)) return "???";
 
         const minutes = Math.floor(seconds / 60);
         let remainingSeconds = Math.floor(seconds % 60);
@@ -46,14 +46,13 @@
 </script>
 
 <style>
-    div {
+    div.container {
         grid-column: span 3;
-        cursor: pointer;
         transition: filter 300ms ease;
     }
 
-    div.playing {
-        filter: brightness(0.8);
+    div.main {
+        cursor: pointer;
     }
 
     picture {
@@ -77,28 +76,48 @@
         transition: opacity 200ms ease;
     }
 
-    div.playing progress {
+    div.info {
+        margin-top: 0.4em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    div.info p {
+        margin: 0;
+    }
+
+    div.container.playing {
+        filter: brightness(0.8);
+    }
+
+    div.container.playing progress {
         opacity: 1;
     }
 </style>
 
-<div bind:this={target} on:click={togglePlaying} class:playing={!paused}>
-    <p>{title}</p>
-    <picture>
-        <img src={coverImage} alt={title + ' cover image'} />
-        <progress value={currentTime / duration || 0} />
-    </picture>
-    <audio
-        bind:this={audioElement}
-        bind:duration
-        bind:currentTime
-        bind:paused
-        on:play={pauseOthers}
-        {title}>
-        <source src={audioFile} />
-        <track kind="captions" />
-    </audio>
-    <p>{formatTime(currentTime)} / {formatTime(duration)}</p>
+<div class="container" bind:this={target} class:playing={!paused}>
+    <div class="main" on:click={togglePlaying}>
+        <p>{title}</p>
+        <picture>
+            <img src={coverImage} alt={title + ' cover image'} />
+            <progress value={currentTime / duration || 0} />
+        </picture>
+        <audio
+            bind:this={audioElement}
+            bind:duration
+            bind:currentTime
+            bind:paused
+            on:play={pauseOthers}
+            {title}>
+            <source src={audioFile} />
+            <track kind="captions" />
+        </audio>
+    </div>
+    <div class="info">
+        <p>{formatTime(currentTime)} / {formatTime(duration)}</p>
+        <a href={audioFile} download>download</a>
+    </div>
 </div>
 
 {#if process.browser}
