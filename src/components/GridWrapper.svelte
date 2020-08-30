@@ -2,7 +2,7 @@
     div {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
-        gap: 1.4em;
+        gap: 2em;
     }
 </style>
 

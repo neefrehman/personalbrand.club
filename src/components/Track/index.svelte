@@ -83,7 +83,6 @@
                 bottom: 0;
                 left: 0;
 
-                -webkit-appearance: none;
                 appearance: none;
                 opacity: 0;
                 transition: opacity 200ms ease;
@@ -125,10 +124,10 @@
 <div class="container" bind:this={target} class:playing={!paused}>
     <div
         class="main"
-        on:click={togglePlaying}
         tabindex="0"
         role="button"
         aria-pressed={!paused}
+        on:click={togglePlaying}
         on:keydown={handleKeyDown}>
         <p>{title}</p>
         <picture>
