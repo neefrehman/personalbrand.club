@@ -75,6 +75,7 @@
 
             progress {
                 width: 100%;
+                height: 12px;
                 position: absolute;
                 bottom: 0;
                 left: 0;
@@ -82,6 +83,14 @@
                 appearance: none;
                 opacity: 0;
                 transition: opacity 200ms ease;
+
+                &::-webkit-progress-bar {
+                    background-color: transparent;
+                }
+
+                &::-webkit-progress-value {
+                    background-color: #eee;
+                }
 
                 &:not([value="0"]) {
                     opacity: 1;
