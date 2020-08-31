@@ -18,13 +18,28 @@
     });
 </script>
 
-<style>
+<style lang="scss">
     :global(body) {
         margin: 0;
         position: relative;
         background-color: #eaeaea;
         color: #1f1f1f;
         font-size: 20px;
+    }
+
+    :global(:focus) {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(21, 156, 228, 0.4);
+        transition: box-shadow 120ms ease;
+
+        &:not(.focus-visible) {
+            outline: none; // Polyfilled
+            box-shadow: none;
+        }
+        &:not(:focus-visible) {
+            outline: none; // Broken when used with the above selector
+            box-shadow: none;
+        }
     }
 
     div {

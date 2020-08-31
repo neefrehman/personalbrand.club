@@ -59,10 +59,6 @@
 
         &.playing {
             filter: brightness(0.8);
-
-            progress {
-                opacity: 1;
-            }
         }
     }
 
@@ -86,6 +82,10 @@
                 appearance: none;
                 opacity: 0;
                 transition: opacity 200ms ease;
+
+                &:not([value="0"]) {
+                    opacity: 1;
+                }
             }
         }
     }
@@ -98,25 +98,6 @@
 
         p {
             margin: 0;
-        }
-    }
-
-    div.main,
-    a {
-        transition: box-shadow 120ms ease;
-
-        &:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(21, 156, 228, 0.4);
-
-            &:not(.focus-visible) {
-                outline: none; // Polyfilled
-                box-shadow: none;
-            }
-            &:not(:focus-visible) {
-                outline: none; // Broken when used with the above selector
-                box-shadow: none;
-            }
         }
     }
 </style>
